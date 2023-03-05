@@ -1,0 +1,17 @@
+image:
+  repository: ghcr.io/drsylent/webuni/cloudnative4/api
+  pullPolicy: Always
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: "latest"
+
+env:
+- name: API_MESSAGE_URL
+  value: http://db-spring-webuni:8080
+
+ingress:
+  enabled: true
+  hosts:
+    - host: application.webuni.com
+      paths:
+        - path: /
+          pathType: Prefix

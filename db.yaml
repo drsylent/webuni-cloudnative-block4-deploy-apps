@@ -1,0 +1,16 @@
+image:
+  repository: ghcr.io/drsylent/webuni/cloudnative4/db
+  pullPolicy: Always
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: "latest"
+
+env:
+- name: SPRING_DATASOURCE_URL
+  value: jdbc:postgresql://postgresql:5432/postgres
+- name: SPRING_DATASOURCE_USERNAME
+  value: user
+- name: SPRING_DATASOURCE_PASSWORD
+  #value: <<SET WITH INSTALLATION>>
+
+ingress:
+  enabled: false
